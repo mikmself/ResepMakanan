@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1674546708 source:c:\users\mikms\onedrive\documents\code block\makanan\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+	<array>
+	<cstring>
+	<bits/stdc++.h>
+
