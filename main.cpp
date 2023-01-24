@@ -102,8 +102,9 @@ int main()
         cout << "e.Update Resep" << endl;
         cout << "f.Cari Bahan Berdasarkan Menu" << endl;
         cout << "g.Cari Menu" << endl;
+        cout << "q.Keluar" << endl;
         cout << " " <<endl;
-        cout << "Masukan Pilihan Anda : ";
+        cout << "Masukan Pilihan Anda contoh (a): ";
         cin >> choice;
         if(choice == 'q' ) {
             printf("Terminating the program...");
@@ -163,6 +164,12 @@ int main()
                 cout << endl << endl;
             }else if(choice == 'e'){
                 cout << endl << endl;
+                cout << "Data Semua Resep : " << endl;
+                for (int i = 0; i < arrayResep.size(); i++){
+                    split(arrayResep[i], ';');
+                    cout << i << ". "<< strings[0] << " | " << strings[1] << " | " << strings[2] << " | " << strings[3];
+                    cout << endl;
+                }
                 cout << "Silahkan pilih resep yang ingin di update : ";
                 cin >> updateResep;
                 for(int i = 0; i < arrayResep.size(); i++){
@@ -182,10 +189,16 @@ int main()
                 cout << endl << endl;
             }else if(choice == 'f'){
                 cout << endl << endl;
+                cout << "Data Semua Resep : " << endl;
+                for (int i = 0; i < arrayResep.size(); i++){
+                    split(arrayResep[i], ';');
+                    cout << i << ". "<< strings[0] << " | " << strings[1] << " | " << strings[2] << " | " << strings[3];
+                    cout << endl;
+                }
                 cout << "Masukan nama menu yang bahannya ingin dicari : ";
                 cin >> cariBahan;
                 for(int i = 0; i < arrayResep.size(); i++){
-                    if(arrayResep[i].find(updateResep) != std::string::npos){
+                    if(arrayResep[i].find(cariBahan) != std::string::npos){
                         split(arrayResep[i], ';');
                         cout << strings[1] << " | " << strings[3];
                         cout << endl;
