@@ -132,11 +132,11 @@ int main()
             }else if(choice == 'c'){
                 cout << endl << endl;
                 cout << "Masukan ID Menu Makanan : " ;
-                cin >> idMenu;
+                getline (cin >> ws, idMenu);
                 cout << "Masukan ID Bahan : ";
-                cin >> idBahan;
+                getline (cin, idBahan);
                 cout << "Masukan Nama Menu : ";
-                getline (cin >> ws, namaMenu);
+                getline (cin, namaMenu);
                 cout << "Masukan Nama Bahan : ";
                 getline (cin, namaBahan);
                 fullResep = idMenu + ";" + idBahan + ";"  + namaMenu + ";" + namaBahan;
@@ -152,7 +152,7 @@ int main()
                     cout << endl;
                 }
                 cout << "Silahkan pilih resep yang ingin di hapus : " ;
-                cin >> hapusResep;
+                getline (cin >> ws, hapusResep);
                 for(int i = 0; i < arrayResep.size() ; i++){
                     if (arrayResep[i].find(hapusResep) != std::string::npos) {
                         arrayResep.erase (arrayResep.begin()+i);
@@ -171,16 +171,16 @@ int main()
                     cout << endl;
                 }
                 cout << "Silahkan pilih resep yang ingin di update : ";
-                cin >> updateResep;
+                getline (cin >> ws, updateResep);
                 for(int i = 0; i < arrayResep.size(); i++){
                     if(arrayResep[i].find(updateResep) != std::string::npos){
                         cout << "Masukan ID Menu Makanan yang baru : " ;
-                        cin >> idMenu;
-                        cout << "Masukan ID Bahan yang baru : ";
-                        cin >> idBahan;
-                        cout << "Masukan Nama Menu yang baru : ";
-                        getline (cin >> ws, namaMenu);
-                        cout << "Masukan Nama Bahan yang baru : ";
+                        getline (cin, idMenu);
+                        cout << "Masukan ID Bahan : ";
+                        getline (cin, idBahan);
+                        cout << "Masukan Nama Menu : ";
+                        getline (cin, namaMenu);
+                        cout << "Masukan Nama Bahan : ";
                         getline (cin, namaBahan);
                         fullResep = idMenu + ";" + idBahan + ";"  + namaMenu + ";" + namaBahan;
                         arrayResep[i] = fullResep;
@@ -196,7 +196,7 @@ int main()
                     cout << endl;
                 }
                 cout << "Masukan nama menu yang bahannya ingin dicari : ";
-                cin >> cariBahan;
+                getline (cin >> ws, cariBahan);
                 for(int i = 0; i < arrayResep.size(); i++){
                     if(arrayResep[i].find(cariBahan) != std::string::npos){
                         split(arrayResep[i], ';');
